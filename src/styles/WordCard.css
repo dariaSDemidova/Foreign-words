@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+.word {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  font-family: "Roboto", sans-serif;
+  border: 0.5px solid black;
+}
+
+.word-english {
+  font-weight: 700;
+}
+
+.word-save {
+  background-color: rgb(156, 240, 156);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1.68px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.word-edit {
+  background-color: rgb(240, 240, 156);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1.68px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.word-delete {
+  background-color: rgb(240, 156, 156);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1.68px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}/*# sourceMappingURL=WordCard.css.map */

@@ -1,0 +1,16 @@
+@import 'fonts';
+
+.input {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(248, 216, 212);
+    height: 40px;
+}
+
+input {
+    height: 20px;
+    text-align: center;
+}

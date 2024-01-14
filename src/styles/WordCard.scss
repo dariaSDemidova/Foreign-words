@@ -1,0 +1,31 @@
+@import 'mixins';
+@import 'fonts';
+
+.word {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    font-family: "Roboto", sans-serif;
+    border: 0.5px solid black;
+}
+
+.word-english {
+    font-weight: 700;
+}
+
+
+.word-save {
+    background-color: rgb(156, 240, 156);
+    @include btn
+}
+
+.word-edit {
+    background-color: rgb(240, 240, 156);
+    @include btn
+}
+
+.word-delete {
+    background-color: rgb(240, 156, 156);
+    @include btn
+}
