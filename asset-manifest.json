@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Foreign-words/static/css/main.d36c0c57.css",
+    "main.js": "/Foreign-words/static/js/main.83429e47.js",
+    "static/js/787.0f2098e3.chunk.js": "/Foreign-words/static/js/787.0f2098e3.chunk.js",
+    "static/media/Roboto-Regular.ttf": "/Foreign-words/static/media/Roboto-Regular.d08b3cc873089fdba7fb.ttf",
+    "static/media/Roboto-Black.ttf": "/Foreign-words/static/media/Roboto-Black.07a21e85941a6d3ca8a6.ttf",
+    "static/media/Roboto-Light.ttf": "/Foreign-words/static/media/Roboto-Light.00fc594b8a514c3f772a.ttf",
+    "static/media/Roboto-Bold.ttf": "/Foreign-words/static/media/Roboto-Bold.c13d0c4f45623629e371.ttf",
+    "static/media/Roboto-Thin.ttf": "/Foreign-words/static/media/Roboto-Thin.5911576099b5bb97cadf.ttf",
+    "index.html": "/Foreign-words/index.html",
+    "main.d36c0c57.css.map": "/Foreign-words/static/css/main.d36c0c57.css.map",
+    "main.83429e47.js.map": "/Foreign-words/static/js/main.83429e47.js.map",
+    "787.0f2098e3.chunk.js.map": "/Foreign-words/static/js/787.0f2098e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d36c0c57.css",
+    "static/js/main.83429e47.js"
+  ]
+}
