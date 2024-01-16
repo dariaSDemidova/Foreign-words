@@ -1,13 +1,17 @@
-@import 'mixins';
-@import 'fonts';
+@import '../../styles/mixins';
+@import '../../styles/fonts';
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 200px;
+}
 
 .word {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: baseline;
     font-family: "Roboto", sans-serif;
-    border: 0.5px solid black;
+    border: 1px solid black;
 }
 
 .word-english {
