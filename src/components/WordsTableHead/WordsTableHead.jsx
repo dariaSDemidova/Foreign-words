@@ -1,4 +1,4 @@
-function DescrCard() {
+function WordsTableHead() {
 
     return (
         <table>
@@ -15,4 +15,4 @@ function DescrCard() {
     );
 }
 
-export default DescrCard;
+export default WordsTableHead;

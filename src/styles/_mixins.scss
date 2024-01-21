@@ -1,4 +1,7 @@
+@import './fonts';
+
 @mixin btn {
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

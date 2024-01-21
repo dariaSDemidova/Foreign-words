@@ -1,5 +1,5 @@
 
-function Inputs() {
+function Input() {
 
     return (
         <div className="input">
@@ -15,4 +15,5 @@ function Inputs() {
     );
 }
 
-export default Inputs;
+export default Input;
+
