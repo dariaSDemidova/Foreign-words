@@ -2,7 +2,7 @@ import './Header.scss'
 import '../Cards/Cards'
 import '../Vocabulary/Vocabulary'
 
-function Header(props) {
+function Header() {
 
     return (
         <header>
