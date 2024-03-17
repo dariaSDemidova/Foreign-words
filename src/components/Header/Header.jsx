@@ -6,9 +6,11 @@ function Header() {
 
     return (
         <header>
-            <div className="title">English Dictionary</div>
-            <a href="Cards.jsx" className="cards">Cards</a>
-            <a href="Vocabulary.jsx" className="vocabulary">Vocabulary</a>
+            <nav>
+                <div className="title">English Dictionary</div>
+                <a href="Vocabulary.jsx" className="vocabulary">Vocabulary</a>
+                <a href="Cards.jsx" className="cards">Cards</a>
+            </nav>
         </header>
     );
 }
