@@ -24,11 +24,11 @@ const CardWrapper = () => {
 
     return (
     <div className="card-wrapper">
-        <button className="previous-btn" onClick={showPreviousCard}>Previous</button>
+        <button className="previous-btn" onClick={showPreviousCard}>Назад</button>
         <Card   english={words[currentIndex].english}
                 russian={words[currentIndex].russian}
                 transcription={words[currentIndex].transcription}/>
-        <button className="next-btn" onClick={showNextCard}>Next</button>
+        <button className="next-btn" onClick={showNextCard}>Вперед</button>
     </div>
     );
 };

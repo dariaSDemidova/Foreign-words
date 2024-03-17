@@ -1,0 +1,29 @@
+@import '../../styles/_mixins';
+@import '../../styles/fonts';
+
+h1 {
+    color: rgb(228, 71, 71);
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 100px;
+}
+
+
+h2 {
+    color: rgb(240, 156, 156);
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.missing-message {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 50px 100px;
+}
+
+.missing-btn {
+    background-color: rgb(240, 156, 156);
+    @include btn;
+}

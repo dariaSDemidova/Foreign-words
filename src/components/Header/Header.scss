@@ -1,6 +1,7 @@
 header {
     position: relative;
     height: 50px;
+    margin-bottom: 30px;
 }
 
 nav {
@@ -29,5 +30,9 @@ a {
 }
 
 a:hover {
+    color: #FFF;
+}
+
+a:active {
     color: #FFF;
 }

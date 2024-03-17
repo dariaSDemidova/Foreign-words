@@ -18,15 +18,16 @@ td {
     font-weight: 700;
 }
 
-
 .word-save {
     background-color: rgb(156, 240, 156);
-    @include btn
+    @include btn;
+    margin-right: 5px;
 }
 
 .word-edit {
     background-color: rgb(240, 240, 156);
-    @include btn
+    @include btn;
+    margin-right: 5px;
 }
 
 .word-delete {

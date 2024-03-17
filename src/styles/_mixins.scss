@@ -5,9 +5,12 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    letter-spacing: 1.68px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
     height: 30px;
+    width: 150px;
+    &:hover {
+        color: #FFFFFF;
+    }
 }
