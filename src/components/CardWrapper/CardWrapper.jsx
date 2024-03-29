@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Card from '../Card/Card';
 import words from '../../store/store';
-import './CardWrapper.scss'
+import './CardWrapper.scss';
 
 const CardWrapper = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [learnedWordsCount, setLearnedWordsCount] = useState(0); 
 
     const showPreviousCard = () => {
         if (currentIndex === 0) {
@@ -22,14 +23,24 @@ const CardWrapper = () => {
         }
     };
 
+    const handleViewTranslation = () => {
+        setLearnedWordsCount(prevCount => prevCount + 1);
+    };
+
     return (
-    <div className="card-wrapper">
-        <button className="previous-btn" onClick={showPreviousCard}>Назад</button>
-        <Card   english={words[currentIndex].english}
+        <div>
+            <div className="words-count">Изучено слов: {learnedWordsCount}</div>
+            <div className="card-wrapper">
+            <button className="previousButton" onClick={showPreviousCard}>Назад</button>
+            <Card
+                english={words[currentIndex].english}
                 russian={words[currentIndex].russian}
-                transcription={words[currentIndex].transcription}/>
-        <button className="next-btn" onClick={showNextCard}>Вперед</button>
-    </div>
+                transcription={words[currentIndex].transcription}
+                onViewTranslation={handleViewTranslation} 
+            />
+            <button className="nextButton" onClick={showNextCard}>Вперед</button>
+            </div>
+        </div>
     );
 };
 

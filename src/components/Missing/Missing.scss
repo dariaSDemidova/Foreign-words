@@ -16,14 +16,14 @@ h2 {
     text-transform: uppercase;
 }
 
-.missing-message {
+.missingMessage {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 20px;
     margin: 50px 100px;
 }
 
-.missing-btn {
+.missingButton {
     background-color: rgb(240, 156, 156);
     @include btn;
 }
