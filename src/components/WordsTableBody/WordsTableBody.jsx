@@ -4,6 +4,13 @@ import '../Input/Input.scss'
 function WordsTableBody(props) {
 
     const [checked, setChecked] = useState(props.checked || false);
+    // const [value, setValue] = useState({
+    //     id,
+    //     english,
+    //     transcription,
+    //     russian,
+    //     tags,
+    // });
 
     const handleChange = () => {
         setChecked(!checked);
@@ -28,5 +35,6 @@ function WordsTableBody(props) {
 }
 
 export default WordsTableBody;
+
 
 

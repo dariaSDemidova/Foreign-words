@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Card from '../Card/Card';
 import words from '../../store/store';
+import Cards from '../Cards/Cards';
 import './CardWrapper.scss';
 
 const CardWrapper = () => {
@@ -32,12 +32,7 @@ const CardWrapper = () => {
             <div className="words-count">Изучено слов: {learnedWordsCount}</div>
             <div className="card-wrapper">
             <button className="previousButton" onClick={showPreviousCard}>Назад</button>
-            <Card
-                english={words[currentIndex].english}
-                russian={words[currentIndex].russian}
-                transcription={words[currentIndex].transcription}
-                onViewTranslation={handleViewTranslation} 
-            />
+            <Cards words={words} handleViewTranslation={handleViewTranslation}/>
             <button className="nextButton" onClick={showNextCard}>Вперед</button>
             </div>
         </div>
@@ -46,5 +41,12 @@ const CardWrapper = () => {
 
 export default CardWrapper;
 
+
+// <Card
+//                 english={words[currentIndex].english}
+//                 russian={words[currentIndex].russian}
+//                 transcription={words[currentIndex].transcription}
+//                 onViewTranslation={handleViewTranslation} 
+//             />
 
 
