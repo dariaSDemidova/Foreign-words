@@ -14,21 +14,40 @@
 //     );
 // }
 
-import Card from '../Card/Card';
-import './Cards.scss'
+// import Card from '../Card/Card';
+// import './Cards.scss'
 
-export default function Cards({words, handleViewTranslation}) {
+// export default function Cards({words, handleViewTranslation}) {
+//     return (
+//         <div className="cards">
+//             {
+//                 words.map((word, index) =>
+//                 <Card english={words[index].english}
+//                 russian={words[index].russian}
+//                 transcription={words[index].transcription}
+//                 onViewTranslation={handleViewTranslation}
+//                 key={index}/>
+//                 )
+//             }
+//         </div>
+//     );
+// };
+
+import Card from '../Card/Card';
+import './Cards.scss';
+
+export default function Cards({ words, handleViewTranslation }) {
     return (
         <div className="cards">
-            {
-                words.map((word, index) =>
-                <Card english={words[index].english}
-                russian={words[index].russian}
-                transcription={words[index].transcription}
-                onViewTranslation={handleViewTranslation}
-                key={index}/>
-                )
-            }
+            {words.map((word, index) => (
+                <Card
+                    english={word.english}
+                    russian={word.russian}
+                    transcription={word.transcription}
+                    onViewTranslation={handleViewTranslation}
+                    key={index}
+                />
+            ))}
         </div>
     );
-};
+}

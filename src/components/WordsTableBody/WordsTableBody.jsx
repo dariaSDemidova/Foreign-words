@@ -1,40 +1,108 @@
 import React, { useState } from 'react';
-import '../Input/Input.scss'
+import styles from '../WordsTableBody/WordsTableBody.scss';
 
-function WordsTableBody(props) {
+function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
+    const [isPressed, setPressed] = useState(false);
+    const [value, setValue] = useState({
+        id,
+        english,
+        transcription,
+        russian,
+    });
 
-    const [checked, setChecked] = useState(props.checked || false);
-    // const [value, setValue] = useState({
-    //     id,
-    //     english,
-    //     transcription,
-    //     russian,
-    //     tags,
-    // });
-
-    const handleChange = () => {
-        setChecked(!checked);
+    const [errors, setErrors] = useState({
+        english: false,
+        transcription: false,
+        russian: false,
+    });
+    
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setValue((prevValue) => {
+            return { ...prevValue, [name]: value };
+        });
+        setErrors({
+            ...errors,
+            [event.target.name]:
+            event.target.value.trim() === "" ? "Field cannot be empty" : false,
+        });
     };
+
+    const handleCancel = () => {
+        setPressed(!isPressed);
+        setValue({ id, english, transcription, russian });
+    };
+
+    const saveChanges = () => {
+        setValue({ ...value });
+        setPressed(!isPressed);        
+    };
+
+    const handleEdit = () => {
+        setPressed(!isPressed);
+    };
+
+    const isBtnDisabled = Object.values(errors).some((elem) => elem);
 
     return (
         <table>
-            <tbody>
-                <tr className="word">
-                    {checked ? <input className="input-id" type="text" placeholder="номер" value={props.id} /> : <td className="word-id">{props.id}</td>}
-                    {checked ? <input className="input-english" type="text" placeholder="слово" value={props.english} /> : <td className="word-english">{props.english}</td>}
-                    {checked ? <input className="input-transcription" type="text" placeholder="транскрипция" value={props.transcription} /> : <td className="word-transcription">{props.transcription}</td>}
-                    {checked ? <input className="input-russian" type="text" placeholder="перевод" value={props.russian} /> : <td className="word-russian">{props.russian}</td>}
-                    {checked ? <input className="input-tags" type="text" placeholder="категория" value={props.tags} /> : <td className="word-tags">{props.tags}</td>}
-                    {checked ? <button className="word-save">Сохранить</button> : <button className="word-edit" onClick={handleChange}>Редактировать</button>}
-                    {checked ? <button className="word-delete" onClick={handleChange}>Отменить</button> : <button className="word-delete">Удалить</button>}
-                </tr>
-            </tbody>
+            <tr className="word">
+                <td>{id}</td>
+                {isPressed ? (
+                    <>
+                        <td>
+                            <input
+                                type="text"
+                                onChange={handleChange}
+                                value={value.english}
+                                name="english"
+                                className={errors.english ? styles.error_border : ""}
+                            />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                onChange={handleChange}
+                                value={value.transcription}
+                                name="transcription"
+                                className={errors.transcription ? styles.error_border : ""}
+                            />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                onChange={handleChange}
+                                value={value.russian}
+                                name="russian"
+                                className={errors.russian ? styles.error_border : ""}
+                            />
+                        </td>
+                    </>
+            ) : (
+                <>
+                    <td>{value.english}</td>
+                    <td>{value.transcription}</td>
+                    <td>{value.russian}</td>
+                </>
+            )}
+            <td>
+                {isPressed ? (
+                    <>
+                        <button className="word-save" onClick={saveChanges} disabled={isBtnDisabled}>Save</button>
+                        <button className="word-cancel" onClick={handleCancel}>Close</button>
+                    </>
+                ) : (
+                    <>
+                        <button className="word-edit" onClick={handleEdit}>Edit</button>
+                        <button className="word-delete" onClick={handleDelete}>Delete</button>
+                    </>
+                )}
+            </td>
+            </tr>
         </table>
-
     );
 }
 
 export default WordsTableBody;
-
-
 

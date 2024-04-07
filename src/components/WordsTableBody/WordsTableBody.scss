@@ -11,11 +11,7 @@ td {
 
 .word {
     font-family: "Roboto", sans-serif;
-    border: 1px solid black;
-}
-
-.word-english {
-    font-weight: 700;
+    // border: 1px solid black;
 }
 
 .word-save {
@@ -30,7 +26,22 @@ td {
     margin-right: 5px;
 }
 
-.word-delete {
+.word-delete,
+.word-cancel {
     background-color: rgb(240, 156, 156);
     @include btn
+}
+
+input {
+    height: 20px;
+    text-align: center;
+    width: 180px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: rgb(248, 216, 212);
+    margin-right: 20px;
+}
+
+.error_border {
+    border: 2px solid red;
 }
