@@ -105,4 +105,3 @@ function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
 }
 
 export default WordsTableBody;
-

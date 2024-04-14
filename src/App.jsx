@@ -1,4 +1,5 @@
 import './App.css';
+import WordProvider from './components//WordContext';
 import Header from './components/Header/Header';
 import Table from './components/Table/Table';
 import './components/WordsTableHead/WordsTableHead.scss';
@@ -13,6 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
+    <WordProvider>
     <Router>
       <div className="App">
         <Header />
@@ -24,6 +26,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </WordProvider>
   );
 }
 

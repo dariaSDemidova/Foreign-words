@@ -40,13 +40,3 @@ const CardWrapper = () => {
 };
 
 export default CardWrapper;
-
-
-// <Card
-//                 english={words[currentIndex].english}
-//                 russian={words[currentIndex].russian}
-//                 transcription={words[currentIndex].transcription}
-//                 onViewTranslation={handleViewTranslation} 
-//             />
-
-
