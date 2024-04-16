@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import words from '../../store/store';
 import Cards from '../Cards/Cards';
-import './CardWrapper.scss';
+import styles from './CardWrapper.module.css';
 
 const CardWrapper = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,11 +29,11 @@ const CardWrapper = () => {
 
     return (
         <div>
-            <div className="words-count">Изучено слов: {learnedWordsCount}</div>
-            <div className="card-wrapper">
-            <button className="previousButton" onClick={showPreviousCard}>Назад</button>
+            <div className={styles.wordsCount}>Изучено слов: {learnedWordsCount}</div>
+            <div className={styles.cardWrapper}>
+            <button className={styles.previousButton} onClick={showPreviousCard}>Назад</button>
             <Cards words={words} handleViewTranslation={handleViewTranslation}/>
-            <button className="nextButton" onClick={showNextCard}>Вперед</button>
+            <button className={styles.nextButton} onClick={showNextCard}>Вперед</button>
             </div>
         </div>
     );

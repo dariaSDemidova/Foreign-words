@@ -30,7 +30,7 @@
 // export default Card;
 
 import React, { useState, useEffect, useRef } from 'react';
-import './Card.scss'
+import styles from './Card.module.css'
 
 const Card = (props) => {
     const { english, russian, transcription, onViewTranslation } = props;
@@ -47,12 +47,12 @@ const Card = (props) => {
     };
 
     return (
-        <div className="card">
-            <div className="card-english">{english}</div>
-            <div className="card-transcription">{transcription}</div>
+        <div className={styles.card}>
+            <div className={styles.english}>{english}</div>
+            <div className={styles.transcription}>{transcription}</div>
             {checked ? 
-                <div className="card-russian">{russian}</div> : 
-                <button ref={buttonRef} className="word-check" onClick={handleChange}>Проверить</button>
+                <div className={styles.russian}>{russian}</div> : 
+                <button ref={buttonRef} className={styles.wordCheck} onClick={handleChange}>Проверить</button>
             }
         </div>
     );

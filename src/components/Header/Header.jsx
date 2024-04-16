@@ -1,6 +1,5 @@
-import './Header.scss'
+import styles from './Header.module.css'
 import '../Cards/Cards'
-import '../Vocabulary/Vocabulary'
 import { Link } from 'react-router-dom'
 
 function Header() {
@@ -8,7 +7,7 @@ function Header() {
     return (
         <header>
             <nav>
-                <Link to='/'><div className="title">English Dictionary</div></Link>
+                <Link to='/'><div className={styles.title}>English Dictionary</div></Link>
                 <Link to='/'>Vocabulary</Link>
                 <Link to='/card'>Card</Link>
                 <Link to='/cards'>Cards</Link>

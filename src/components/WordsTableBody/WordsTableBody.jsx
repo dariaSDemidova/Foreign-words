@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../WordsTableBody/WordsTableBody.scss';
+import styles from '../WordsTableBody/WordsTableBody.module.css';
 
 function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
     const [isPressed, setPressed] = useState(false);
@@ -47,7 +47,7 @@ function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
 
     return (
         <table>
-            <tr className="word">
+            <tr className={styles.word}>
                 <td>{id}</td>
                 {isPressed ? (
                     <>
@@ -89,13 +89,13 @@ function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
             <td>
                 {isPressed ? (
                     <>
-                        <button className="word-save" onClick={saveChanges} disabled={isBtnDisabled}>Save</button>
-                        <button className="word-cancel" onClick={handleCancel}>Close</button>
+                        <button className={styles.saveButton} onClick={saveChanges} disabled={isBtnDisabled}>Save</button>
+                        <button className={styles.cancelButton} onClick={handleCancel}>Close</button>
                     </>
                 ) : (
                     <>
-                        <button className="word-edit" onClick={handleEdit}>Edit</button>
-                        <button className="word-delete" onClick={handleDelete}>Delete</button>
+                        <button className={styles.editButton} onClick={handleEdit}>Edit</button>
+                        <button className={styles.deleteButton} onClick={handleDelete}>Delete</button>
                     </>
                 )}
             </td>
@@ -105,3 +105,4 @@ function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
 }
 
 export default WordsTableBody;
+

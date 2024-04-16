@@ -1,14 +1,16 @@
+import styles from '../WordsTableHead/WordsTableHead.module.css';
+
 function WordsTableHead() {
 
     return (
         <table>
-            <thead className="descr">
+            <thead className={styles.descr}>
                 <tr>
-                    <th className="descr-id">#</th>
-                    <th className="descr-english">слово</th>
-                    <th className="descr-transcription">транскрипция</th>
-                    <th className="descr-russian">перевод</th>
-                    <th className="descr-tags">категория</th>
+                    <th>#</th>
+                    <th>слово</th>
+                    <th>транскрипция</th>
+                    <th>перевод</th>
+                    <th>категория</th>
                 </tr>
             </thead>
         </table>

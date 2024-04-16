@@ -1,0 +1,73 @@
+@import '../../styles/fonts';
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 200px;
+}
+
+.word {
+    font-family: "Roboto", sans-serif;
+    border: 1px solid black;
+}
+
+.saveButton {
+    background-color: rgb(156, 240, 156);
+    margin-right: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    &:hover {
+        color: #FFFFFF;
+    }
+}
+
+.editButton {
+    background-color: rgb(240, 240, 156);
+    margin-right: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    &:hover {
+        color: #FFFFFF;
+    }
+}
+
+.deleteButton,
+.cancelButton {
+    background-color: rgb(240, 156, 156);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    &:hover {
+        color: #FFFFFF;
+    }
+}
+
+input {
+    height: 20px;
+    text-align: center;
+    width: 180px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: rgb(248, 216, 212);
+    margin-right: 20px;
+}
+
+.error_border {
+    border: 2px solid red;
+}

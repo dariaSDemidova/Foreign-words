@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { WordContext } from '../WordContext';
 import Card from '../Card/Card';
 import Loading from '../Loading/Loading'; 
-import './Cards.scss';
+import styles from './Cards.module.css';
 
 export default function Cards({ handleViewTranslation }) {
     const { words, loading } = useContext(WordContext); 
@@ -12,7 +12,7 @@ export default function Cards({ handleViewTranslation }) {
     }
 
     return (
-        <div className="cards">
+        <div className={styles.cards}>
             {words.map((word, index) => (
                 <Card
                     english={word.english}
