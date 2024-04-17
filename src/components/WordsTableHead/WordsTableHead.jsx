@@ -10,7 +10,7 @@ function WordsTableHead() {
                     <th>слово</th>
                     <th>транскрипция</th>
                     <th>перевод</th>
-                    <th>категория</th>
+                    <th></th>
                 </tr>
             </thead>
         </table>

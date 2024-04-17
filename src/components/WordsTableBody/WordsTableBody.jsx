@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from '../WordsTableBody/WordsTableBody.module.css';
+import { WordContext } from "../WordContext";
 
-function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
+function WordsTableBody({ id, english, transcription, russian }) {
+    const { updateWord, deleteWord } = useContext(WordContext);
+
     const [isPressed, setPressed] = useState(false);
     const [value, setValue] = useState({
         id,
@@ -35,12 +38,16 @@ function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
     };
 
     const saveChanges = () => {
-        setValue({ ...value });
+        updateWord(id, value);
         setPressed(!isPressed);        
     };
 
     const handleEdit = () => {
         setPressed(!isPressed);
+    };
+
+    const handleDelete = () => {
+        deleteWord(id);
     };
 
     const isBtnDisabled = Object.values(errors).some((elem) => elem);
@@ -105,4 +112,3 @@ function WordsTableBody({ id, english, transcription, russian, handleDelete }) {
 }
 
 export default WordsTableBody;
-

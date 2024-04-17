@@ -2,15 +2,17 @@
 
 table {
     width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
 }
 
 td {
     width: 200px;
+    border-bottom: 0.5px solid black;
 }
 
 .word {
     font-family: "Roboto", sans-serif;
-    border: 1px solid black;
 }
 
 .saveButton {
@@ -59,13 +61,14 @@ td {
 }
 
 input {
-    height: 20px;
+    height: 25px;
     text-align: center;
-    width: 180px;
+    width: 150px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: rgb(248, 216, 212);
     margin-right: 20px;
+    border: none;
 }
 
 .error_border {

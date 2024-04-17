@@ -5,10 +5,7 @@ import Table from './components/Table/Table';
 import Cards from './components/Cards/Cards';
 import CardWrapper from './components/CardWrapper/CardWrapper';
 import Missing from './components/Missing/Missing';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-
 
 function App() {
   return (
