@@ -10,7 +10,6 @@ function Header() {
                 <Link to='/'><div className={styles.title}>English Dictionary</div></Link>
                 <Link to='/'>Vocabulary</Link>
                 <Link to='/card'>Card</Link>
-                <Link to='/cards'>Cards</Link>
             </nav>
         </header>
     );

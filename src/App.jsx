@@ -2,7 +2,6 @@ import './App.css';
 import WordProvider from './components//WordContext';
 import Header from './components/Header/Header';
 import Table from './components/Table/Table';
-import Cards from './components/Cards/Cards';
 import CardWrapper from './components/CardWrapper/CardWrapper';
 import Missing from './components/Missing/Missing';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -16,7 +15,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Table/>}/>
           <Route path="/card" element={<CardWrapper/>}/>
-          <Route path="/cards" element={<Cards/>}/>
           <Route path="*" element={<Missing/>}/>
         </Routes>
       </div>

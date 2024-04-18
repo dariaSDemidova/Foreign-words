@@ -1,40 +1,8 @@
-// import React, { useState, useEffect, useRef } from 'react';
-// import './Card.scss'
-
-// const Card = (props) => {
-//     const { english, russian, transcription, onViewTranslation } = props;
-//     const [checked, setChecked] = useState(props.checked || false);
-//     const buttonRef = useRef(null);
-
-//     useEffect(() => {
-//         buttonRef.current.focus();
-//     }, []); 
-
-//     const handleChange = () => {
-//         setChecked(!checked);
-//         onViewTranslation();
-//     };
-
-//     return (
-//         <div className="card">
-//             <div className="card-english">{english}</div>
-//             <div className="card-transcription">{transcription}</div>
-//             {checked ? 
-//                 <div className="card-russian">{russian}</div> : 
-//                 <button ref={buttonRef} className="word-check" onClick={handleChange}>Проверить</button>
-//             }
-//         </div>
-//     );
-// }
-
-// export default Card;
-
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Card.module.css'
 
-const Card = (props) => {
-    const { english, russian, transcription, onViewTranslation } = props;
-    const [checked, setChecked] = useState( false);
+const Card = ({ english, russian, transcription, isActive, onViewTranslation }) => {
+    const [checked, setChecked] = useState(false);
     const buttonRef = useRef(null);
 
     useEffect(() => {
@@ -43,11 +11,11 @@ const Card = (props) => {
 
     const handleChange = () => {
         setChecked(!checked);
-        onViewTranslation();
+        onViewTranslation(); 
     };
 
     return (
-        <div className={styles.card}>
+        <div className={`${styles.card} ${isActive ? styles.active : ''}`}>
             <div className={styles.english}>{english}</div>
             <div className={styles.transcription}>{transcription}</div>
             {checked ? 
@@ -59,10 +27,3 @@ const Card = (props) => {
 }
 
 export default Card;
-
-
-
-
-
-
-
