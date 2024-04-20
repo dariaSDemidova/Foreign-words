@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import styles from '../WordsTableBody/WordsTableBody.module.css';
+import styles from './WordsTableBody.module.css';
 import { WordContext } from "../WordContext";
 
 function WordsTableBody({ id, english, transcription, russian }) {
