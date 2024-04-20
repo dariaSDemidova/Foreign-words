@@ -2,10 +2,8 @@ import React, { useContext, useState } from 'react';
 import { WordContext } from "../WordContext";
 import styles from "./Form.module.css"
 
-function Form () {
+const Form = () => {
     const { addWord } = useContext(WordContext);
-    
-    const [isPressed, setPressed] = useState(false);
     const [value, setValue] = useState({
         english: '',
         transcription: '',
@@ -21,58 +19,70 @@ function Form () {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setValue((prevValue) => {
-            return { ...prevValue, [name]: value };
-        });
-        setErrors({
-            ...errors,
-            [event.target.name]: event.target.value.trim() === "" ? "Field cannot be empty" : false,
-        });
+        setValue(prevValue => ({
+            ...prevValue,
+            [name]: value
+        }));
+        setErrors(prevErrors => ({
+            ...prevErrors,
+            [name]: value.trim() === "" ? "Field cannot be empty" : false
+        }));
     };
 
     const handleAdd = (e) => {
-        e.preventDefault(); 
-            addWord(value);
-            setValue({ english: '', transcription: '', russian: '' });
-            setPressed(!isPressed); 
+        e.preventDefault();
+        if (Object.values(errors).some(error => error)) {
+            return;
+        }
+        addWord(value);
+        setValue({
+            english: '',
+            transcription: '',
+            russian: ''
+        });
+        setErrors({
+            english: false,
+            transcription: false,
+            russian: false,
+        });
     };
 
     const isBtnDisabled = Object.values(errors).some((elem) => elem);
 
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleAdd}>
             <td>
                 <input
                     type="text"
-                    onChange={handleChange}
                     value={value.english}
                     name="english"
                     placeholder="слово"
                     className={errors.english ? styles.error_border : ""}
+                    onChange={handleChange}
                 />
             </td>
             <td>
                 <input
                     type="text"
-                    onChange={handleChange}
                     value={value.transcription}
                     name="transcription"
                     placeholder="транскрипция"
                     className={errors.transcription ? styles.error_border : ""}
+                    onChange={handleChange}
                 />
             </td>
             <td>
                 <input
                     type="text"
-                    onChange={handleChange}
                     value={value.russian}
                     name="russian"
                     placeholder="перевод"
                     className={errors.russian ? styles.error_border : ""}
+                    onChange={handleChange}
                 />
             </td>
             <td>
-                <button className={styles.saveButton} onClick={handleAdd} disabled={isBtnDisabled}>Save</button>
+                <button type="submit" className={styles.saveButton} disabled={isBtnDisabled}>Save</button>
             </td>
         </form>
     );
