@@ -1,9 +1,14 @@
-import React, { useContext, useState } from 'react';
+// import React, { useContext, useState } from 'react';
+// import { WordContext } from "../WordContext";
+import React, { useState } from 'react';
+import { observer, inject } from 'mobx-react';
 import styles from './WordsTableBody.module.css';
-import { WordContext } from "../WordContext";
 
-function WordsTableBody({ id, english, transcription, russian }) {
-    const { updateWord, deleteWord } = useContext(WordContext);
+// function WordsTableBody({ id, english, transcription, russian }) {
+//     const { updateWord, deleteWord } = useContext(WordContext);
+
+function WordsTableBody({ id, english, transcription, russian, wordStore }) {
+    const { updateWord, deleteWord } = wordStore;
 
     const [isPressed, setPressed] = useState(false);
     const [value, setValue] = useState({
@@ -111,4 +116,5 @@ function WordsTableBody({ id, english, transcription, russian }) {
     );
 }
 
-export default WordsTableBody;
+// export default WordsTableBody;
+export default inject('wordStore')(observer(WordsTableBody));

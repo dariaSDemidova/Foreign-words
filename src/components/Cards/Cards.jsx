@@ -1,11 +1,15 @@
-import React, { useContext, useState } from 'react';
-import { WordContext } from '../WordContext';
+// import React, { useContext, useState } from 'react';
+// import { WordContext } from '../WordContext';
+import React, { useState } from 'react';
+import { observer, inject } from 'mobx-react';
 import Card from '../Card/Card';
 import Loading from '../Loading/Loading'; 
 import styles from './Cards.module.css';
 
-export default function Cards({ handleViewTranslation }) {
-    const { words, loading } = useContext(WordContext); 
+// export default function Cards({ handleViewTranslation }) {
+    // const { words, loading } = useContext(WordContext); 
+    const Cards = ({ wordStore, handleViewTranslation }) => {
+    const { words, loading } = wordStore;
     const [activeCardIndex, setActiveCardIndex] = useState(0);
 
     const nextCard = () => {
@@ -37,3 +41,5 @@ export default function Cards({ handleViewTranslation }) {
         </div>
     );
 }
+
+export default inject('wordStore')(observer(Cards));

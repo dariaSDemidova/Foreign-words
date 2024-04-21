@@ -1,12 +1,16 @@
-import React, { useContext } from 'react';
-import { WordContext } from '../WordContext';
+// import React, { useContext } from 'react';
+// import { WordContext } from '../WordContext';
+import React from 'react';
+import { observer, inject } from 'mobx-react';
 import WordsTableHead from '../WordsTableHead/WordsTableHead';
 import WordsTableBody from '../WordsTableBody/WordsTableBody';
 import Loading from '../Loading/Loading';
-import Form from '../Form/Form';
+// import Form from '../Form/Form';
 
-function Table() {
-    const { words, loading } = useContext(WordContext); 
+// function Table() {
+//     const { words, loading } = useContext(WordContext); 
+const Table = observer(({ wordStore }) => {
+    const { words, loading } = wordStore;
 
     if (loading) {
         return <Loading />; 
@@ -14,7 +18,7 @@ function Table() {
 
     return (
         <div>
-            <Form/>
+            {/* <Form/> */}
             <WordsTableHead />
             {
                 words.map((word) => (
@@ -23,7 +27,8 @@ function Table() {
             }
         </div>
     );
-}
+});
 
-export default Table;
+// export default Table;
+export default inject('wordStore')(Table);
 
