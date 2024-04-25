@@ -7,10 +7,9 @@ class WordStore {
 
     constructor() {
         makeAutoObservable(this);
-        this.fetchWords();
     }
 
-    async fetchWords() {
+    fetchWords = async () => {
         try {
             const response = await fetch('http://itgirlschool.justmakeit.ru/api/words');
             if (!response.ok) {
@@ -25,7 +24,7 @@ class WordStore {
         }
     }
 
-    async updateWord(id, updatedWord) {
+    updateWord = async (id, updatedWord) => {
         const body = {
         id: id,
         english: updatedWord.english,
@@ -51,11 +50,11 @@ class WordStore {
         const updatedWords = this.words.map((word) => (word.id === id ? updatedWord : word));
         this.words = updatedWords;
         } catch (err) {
-        this.error = err.message;
+        console.error(err);
         }
     }
 
-    async deleteWord(id) {
+    deleteWord = async (id) => {
         try {
         const response = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
             method: 'POST',
@@ -64,14 +63,14 @@ class WordStore {
         if (!response.ok) {
             throw new Error('Ошибка удаления слова');
         }
-
+        console.log("DELETE")
         this.words = this.words.filter((word) => word.id !== id);
         } catch (err) {
-        this.error = err.message;
+        console.error(err);
         }
     }
 
-    async addWord(newWord) {
+    addWord = async (newWord) => {
         try {
         const response = await fetch('http://itgirlschool.justmakeit.ru/api/words/add', {
             method: 'POST',
@@ -88,7 +87,7 @@ class WordStore {
         const data = await response.json();
         this.words.push(data);
         } catch (err) {
-        this.error = err.message;
+        console.error(err);
         }
     }
 }

@@ -7,9 +7,7 @@ import styles from './WordsTableBody.module.css';
 // function WordsTableBody({ id, english, transcription, russian }) {
 //     const { updateWord, deleteWord } = useContext(WordContext);
 
-function WordsTableBody({ id, english, transcription, russian, wordStore }) {
-    const { updateWord, deleteWord } = wordStore;
-
+function WordsTableBody({ id, english, transcription, russian, updateWord, deleteWord }) {
     const [isPressed, setPressed] = useState(false);
     const [value, setValue] = useState({
         id,
@@ -56,9 +54,10 @@ function WordsTableBody({ id, english, transcription, russian, wordStore }) {
     };
 
     const isBtnDisabled = Object.values(errors).some((elem) => elem);
-
+    
     return (
         <table>
+            <tbody>
             <tr className={styles.word}>
                 <td>{id}</td>
                 {isPressed ? (
@@ -112,9 +111,17 @@ function WordsTableBody({ id, english, transcription, russian, wordStore }) {
                 )}
             </td>
             </tr>
+            </tbody>
         </table>
     );
 }
 
 // export default WordsTableBody;
-export default inject('wordStore')(observer(WordsTableBody));
+export default inject(({wordStore}) => {
+const {updateWord, deleteWord} = wordStore;
+
+return {
+updateWord,
+deleteWord,
+};
+})(observer(WordsTableBody));
