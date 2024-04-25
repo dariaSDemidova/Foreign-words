@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react';
 import WordsTableHead from '../WordsTableHead/WordsTableHead';
 import WordsTableBody from '../WordsTableBody/WordsTableBody';
 import Loading from '../Loading/Loading';
-// import Form from '../Form/Form';
+import Form from '../Form/Form';
 
 
 // function Table() {
@@ -18,7 +18,7 @@ const Table = ({ words, loading }) => {
 
     return (
         <div>
-            {/* <Form/> */}
+            <Form/>
             <WordsTableHead />
             {
                 words.map((word) => (
