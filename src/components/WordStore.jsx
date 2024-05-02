@@ -72,7 +72,7 @@ class WordStore {
 
     addWord = async (newWord) => {
         try {
-        const response = await fetch('http://itgirlschool.justmakeit.ru/api/words/add', {
+        const response = await fetch('/api/words/add', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
